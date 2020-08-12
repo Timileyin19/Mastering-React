@@ -11,6 +11,12 @@ function AddTransaction() {
     const onSubmit = (e) => {
         e.preventDefault();
 
+        if (text === '' || amount === '' || status === '') {
+            alert('All fields are required');
+            return;
+
+        }
+
         const newTransaction = {
             id: Math.floor(Math.random() * 10000000 ),
             text,
@@ -23,6 +29,8 @@ function AddTransaction() {
         setStatus('');
         setAmount('');
     }
+
+    
 
 
 
